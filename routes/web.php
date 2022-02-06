@@ -22,6 +22,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// Ruta resource con breeze aplicado
 Route::resource('centros', CentroController::class)->middleware(['auth']);
 
 //Si la ruta no existe puedo indicar qué vista mostrar
