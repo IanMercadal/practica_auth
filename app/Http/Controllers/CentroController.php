@@ -38,6 +38,7 @@ class CentroController extends Controller
      */
     public function store(StoreRequest $request)
     {
+        // Modo eloquent
         $centro = (new Centro)->fill($request->all() );
         $centro->avatar = $request->file('avatar')->store('public');
 
