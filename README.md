@@ -6,6 +6,9 @@ sigues los pasos de la tarea, no puedes ver los resultados de lo que haces al mo
 
 De otro modo, los commits tienen asignado el número correspondiente en el nombre.
 
+IMPORTANTE:
+Si instalas el repo en tu equipo, realiza un compoder update y cuidado con el tema permisos.
+
 ## Acceder vía servidor del centro
 1. http://imercadal.ifc33b.cifpfbmoll.eu/
 2. Acceder a la carpeta practica_auth/public
