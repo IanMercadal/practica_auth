@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRequest;
 use App\Models\Centro;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CentroController extends Controller
 {
@@ -27,6 +28,9 @@ class CentroController extends Controller
      */
     public function create(Centro $centro)
     {
+        if (! Gate::allows('create', $centro)) {
+            abort(403);
+        }
         return view('centros.create', compact('centro'));
     }
 
@@ -54,6 +58,9 @@ class CentroController extends Controller
      */
     public function show(Centro $centro)
     {
+        if (! Gate::allows('show', $centro)) {
+            abort(403);
+        }
         return view('centros.show',compact('centro'));
     }
 
@@ -65,6 +72,9 @@ class CentroController extends Controller
      */
     public function edit(Centro $centro)
     {
+        if (! Gate::allows('edit', $centro)) {
+            abort(403);
+        }
         return view('centros.edit',compact('centro'));
     }
 
@@ -77,6 +87,9 @@ class CentroController extends Controller
      */
     public function update(Request $request, Centro $centro)
     {
+        if (! Gate::allows('update', $centro)) {
+            abort(403);
+        }
         $centro->fill($request->all());
 
         if($request->hasFile('avatar')){
@@ -95,6 +108,9 @@ class CentroController extends Controller
      */
     public function destroy(Centro $centro)
     {
+        if (! Gate::allows('delete', $centro)) {
+            abort(403);
+        }
         $centro->delete();
         return redirect()->route('centros.index');
     }

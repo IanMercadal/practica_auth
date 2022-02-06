@@ -14,7 +14,9 @@
                 <th scope="col">Centro</th>
                 <th scope="col">Fundado</th>
                 <th>
-                    <button class="btn btn-primary"><a class="text-white" href="{{route('centros.create')}}">@lang('Create')</a></button>
+                    @can('create', $centros)
+                        <button class="btn btn-primary"><a class="text-white" href="{{route('centros.create')}}">@lang('Create')</a></button>
+                    @endcan  
                 </th>      
             </tr>
         </thead>
@@ -27,9 +29,14 @@
                 <td>{{ $centro->name}}</td>
                 <td>{{ $centro->fundado}}</td>
                 <td>
-                    <a href="{{route('centros.edit', $centro->id)}}"><button class="btn btn-primary">@lang('Edit')</button></a>
+                    @can('update', $centro)
+                        <a href="{{route('centros.edit', $centro->id)}}"><button class="btn btn-primary">@lang('Edit')</button></a>
+                    @endcan
 
-                    <button class="btn btn-danger"><a class="text-white" href="{{route('centros.show',$centro->id)}}">@lang('Delete')</a></button>
+                    @can('delete', $centro)
+                        <button class="btn btn-danger"><a class="text-white" href="{{route('centros.show',$centro->id)}}">@lang('Delete')</a></button>
+                    @endcan
+                    
                 </td>
             </tr>
             @endforeach
