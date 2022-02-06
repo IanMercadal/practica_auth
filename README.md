@@ -10,8 +10,7 @@ IMPORTANTE:
 Si instalas el repo en tu equipo, realiza un compoder update y cuidado con el tema permisos.
 
 ## Acceder vía servidor del centro
-1. http://imercadal.ifc33b.cifpfbmoll.eu/
-2. Acceder a la carpeta practica_auth/public
+1. http://imercadal.ifc33b.cifpfbmoll.eu/practica_auth/public/
 
 ## Archivo .env
 
