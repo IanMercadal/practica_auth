@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRequest;
 use App\Models\Centro;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,7 @@ class CentroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $centro = (new Centro)->fill($request->all() );
         $centro->avatar = $request->file('avatar')->store('public');
