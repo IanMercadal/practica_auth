@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group m-2">
-            <label>@lang('Image')<br> <input class="form-control" type="file" name="avatar" required></label>
+            <label>@lang('Image')<br> <input class="form-control" type="file" name="avatar"></label>
             @error('avatar')
                 <br>
                 <small class="text-danger">*{{$message}}</small>
@@ -46,7 +46,7 @@
         </div>
         
         <div class="form-group m-2">
-            <label>@lang('Founded'): <br> <input type="date" class="form-control" name="fundado" value="{{ old('fundado')}}"></label>
+            <label>@lang('Founded'): <br> <input type="date" class="form-control" name="fundado" value="{{ old('fundado')}}" ></label>
             @error('fundado')
                 <br>
                 <small class="text-danger">*{{$message}}</small>
