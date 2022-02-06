@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group m-2">
-            <label>@lang('Image')<br> <input class="form-control" type="file" name="avatar"></label>
+            <label>@lang('Select A New Photo')<br> <input class="form-control" type="file" name="avatar"></label>
             @error('avatar')
                 <br>
                 <small class="text-danger">*{{$message}}</small>
@@ -70,8 +70,6 @@
         
         <div class="form-group m-2">
             <label>@lang('Extraescolar'):</label>
-            <br>
-            <label for="extraescolar">Selecciona</label>
             <br>
             <select name="extraescolar" id="extraescolar">
                 <option value="">--Selecciona una opcion--</option>
