@@ -75,11 +75,13 @@ class CentroController extends Controller
      */
     public function update(Request $request, Centro $centro)
     {
-        $centro = (new Centro)->fill($request->all() );
-        $centro->avatar = $request->file('avatar')->store('public');
+        $centro->fill($request->all());
+
+        if($request->hasFile('avatar')){
+            $centro->avatar = $request->file('avatar')->store('public');
+        }
 
         $centro->save();
-
         return redirect()->route('centros.index', $centro);
     }
 

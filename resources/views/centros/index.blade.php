@@ -14,9 +14,7 @@
                 <th scope="col">Centro</th>
                 <th scope="col">Fundado</th>
                 <th>
-                    @can('create', \App\Models\Centro::class)
-                        <button class="btn btn-primary"><a class="text-white" href="{{route('centros.create')}}">@lang('Create')</a></button>
-                    @endcan  
+                    <button class="btn btn-primary"><a class="text-white" href="{{route('centros.create')}}">@lang('Create')</a></button>
                 </th>      
             </tr>
         </thead>
